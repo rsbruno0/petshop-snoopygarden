@@ -1570,6 +1570,77 @@ textarea.form-control {
     height: 20px;
 }
 
+/* Instagram Highlight Banner (Inside About Us) */
+.instagram-highlight-banner {
+    margin-top: 32px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 250, 247, 0.95) 100%);
+    border: 2px dashed var(--color-primary-dark);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    transition: var(--transition-normal);
+}
+
+.instagram-highlight-banner:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+}
+
+.insta-badge-mini {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: #cc2366;
+    background-color: rgba(204, 35, 102, 0.08);
+    padding: 4px 10px;
+    border-radius: var(--radius-lg);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.insta-title-mini {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-primary-dark);
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.insta-text-mini {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.btn-instagram-highlight {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: var(--color-white) !important;
+    border: none;
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    box-shadow: 0 4px 12px rgba(220, 39, 67, 0.2);
+}
+
+.btn-instagram-highlight:hover {
+    background: linear-gradient(45deg, #f39f48 0%, #eb7c54 25%, #e13d56 50%, #d13775 75%, #c52994 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(220, 39, 67, 0.3);
+}
+
+.btn-insta-icon-mini {
+    transition: transform 0.3s ease;
+}
+
+.btn-instagram-highlight:hover .btn-insta-icon-mini {
+    transform: scale(1.15) rotate(5deg);
+}
+
 .instagram-cta-section {
     padding: 80px 0;
     background-color: var(--color-bg-light);
