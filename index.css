@@ -1540,6 +1540,145 @@ textarea.form-control {
     }
 }
 
+/* ==========================================================================
+   14B. INSTAGRAM INTEGRATION (BASE STYLES)
+   ========================================================================== */
+
+.btn-instagram-header {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: var(--color-white) !important;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-circle);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 4px 10px rgba(220, 39, 67, 0.25);
+    transition: var(--transition-normal);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-instagram-header:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(220, 39, 67, 0.4);
+}
+
+.btn-instagram-header svg {
+    width: 20px;
+    height: 20px;
+}
+
+.instagram-cta-section {
+    padding: 80px 0;
+    background-color: var(--color-bg-light);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background subtle styling details */
+.instagram-cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(220,39,67,0.08) 0%, transparent 70%);
+    border-radius: var(--radius-circle);
+    pointer-events: none;
+}
+
+.instagram-cta-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(240,148,51,0.08) 0%, transparent 70%);
+    border-radius: var(--radius-circle);
+    pointer-events: none;
+}
+
+.instagram-cta-container {
+    max-width: 900px;
+}
+
+.instagram-cta-content {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: 48px 40px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0, 130, 114, 0.06);
+    position: relative;
+    z-index: 2;
+    transition: var(--transition-normal);
+}
+
+.instagram-cta-content:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.insta-badge {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #cc2366;
+    background-color: rgba(204, 35, 102, 0.08);
+    padding: 6px 14px;
+    border-radius: var(--radius-lg);
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.insta-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-primary-dark);
+    margin-bottom: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+}
+
+.insta-text {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    max-width: 640px;
+    margin: 0 auto 32px auto;
+    line-height: 1.6;
+}
+
+.btn-instagram-cta {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: var(--color-white) !important;
+    border: none;
+    box-shadow: 0 8px 25px rgba(220, 39, 67, 0.3);
+}
+
+.btn-instagram-cta:hover {
+    background: linear-gradient(45deg, #f39f48 0%, #eb7c54 25%, #e13d56 50%, #d13775 75%, #c52994 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(220, 39, 67, 0.45);
+}
+
+.btn-insta-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 4px;
+    transition: transform 0.3s ease;
+}
+
+.btn-instagram-cta:hover .btn-insta-icon {
+    transform: scale(1.15) rotate(5deg);
+}
+
 /* 15. RESPONSIVIDADE (MEDIA QUERIES) */
 
 @media (max-width: 1024px) {
@@ -1662,6 +1801,23 @@ textarea.form-control {
     
     #header-whatsapp {
         display: none; /* Esconde o whats no header em telas muito pequenas, ja tem o botao flutuante */
+    }
+    
+    .btn-instagram-header {
+        display: none; /* Esconde o instagram no header em telas pequenas */
+    }
+    
+    .instagram-cta-content {
+        padding: 36px 20px;
+    }
+    
+    .insta-title {
+        font-size: 1.6rem;
+    }
+    
+    .insta-text {
+        font-size: 0.95rem;
+        margin-bottom: 24px;
     }
     
     .hero-title {
