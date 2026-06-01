@@ -1574,18 +1574,17 @@ textarea.form-control {
 .instagram-highlight-banner {
     margin-top: 32px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 250, 247, 0.95) 100%);
-    border: 2px dashed var(--color-primary-dark);
+    border: 1px solid rgba(0, 130, 114, 0.08); /* Borda extremamente sutil e suave */
     border-radius: var(--radius-md);
     padding: 24px;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md); /* Sombra suave para flutuação elegante */
     position: relative;
     transition: var(--transition-normal);
 }
 
 .instagram-highlight-banner:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--color-accent);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg); /* Sombra mais destacada no hover para efeito de profundidade */
 }
 
 .insta-badge-mini {
