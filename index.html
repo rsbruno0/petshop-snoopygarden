@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop Snoopy Garden - Tudo que seu pet precisa, em um só lugar!</title>
+    
+    <!-- Meta Tags de SEO -->
+    <meta name="description" content="No Pet Shop Snoopy Garden oferecemos banho e tosa, consultas veterinárias, exames, vacinas e farmácia. Agende o horário do seu melhor amigo em Salvador, Pernambués.">
+    <meta name="keywords" content="pet shop salvador, banho e tosa salvador, veterinario pernambues, clinica veterinaria salvador, pet shop snoopy garden, snoopy garden, vacina pet, farmacia veterinaria">
+    <meta name="author" content="Pet Shop Snoopy Garden">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (Facebook/WhatsApp Share) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pet Shop Snoopy Garden - Tudo que seu pet precisa, em um só lugar!">
+    <meta property="og:description" content="Cuidado, carinho e dedicação para o seu melhor amigo. Agende o horário dele no coração de Salvador!">
+    <meta property="og:image" content="assets/hero_pets.png">
+    <meta property="og:url" content="https://snoopygarden.com.br">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet.js CSS para o Mapa Interativo -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Acessibilidade: Ir para o Conteúdo Principal -->
+    <a href="#conteudo-principal" class="sr-only">Pular para o conteúdo principal</a>
+
+    <!-- Header / Navbar Sticky -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="#inicio" class="logo" id="logo-link">
+                <!-- SVG Logo correspondente ao SnoopGarden (Flor com Pata no centro) -->
+                <img src="assets/logo.png" alt="Pet Shop Snoopy Garden" class="logo-icon">
+                <div class="logo-text">
+                    <span class="logo-brand">Snoopy Garden</span>
+                    <span class="logo-sub">PET SHOP</span>
+                </div>
+            </a>
+            
+            <nav class="nav" id="nav-menu" aria-label="Navegação Principal">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link active">Início</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="#agendar" class="nav-link">Agendamento</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://api.whatsapp.com/send?phone=5571999922320&text=Confirme%20e%20Agende%20seu%20hor%C3%A1rio%20no%20WhatsApp%20" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" id="header-whatsapp">
+                    <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.377-.01-.58-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.8.983 3.834 1.503 5.903 1.504h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    <span>(71) 99992-2320</span>
+                </a>
+                <button class="mobile-nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir Menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+        
+        <!-- Hero Section -->
+        <section id="inicio" class="hero-section">
+            <div class="hero-bg-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+            </div>
+            
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        O Pet Shop Mais Amado de Salvador
+                    </div>
+                    <h1 class="hero-title">
+                        TUDO QUE SEU <br>
+                        <span class="highlight-pink">P<span style="letter-spacing: 0.09em;">E</span>T PRECISA,</span> <br>
+                        <span class="highlight-badge">EM UM SÓ LUGAR!</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Cuidado, carinho e saúde para o seu melhor amigo! Nossa estrutura funcional e equipe dedicada estão prontas para atender seu pet com total responsabilidade e atenção.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#servicos" class="btn btn-primary btn-lg">NOSSOS SERVIÇOS</a>
+                        <a href="#agendar" class="btn btn-outline btn-lg">Agendar Horário</a>
+                    </div>
+                    
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">★</span>
+                            <div class="feature-text">
+                                <strong>Nota 4.9</strong>
+                                <span>no Google Reviews</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📍</span>
+                            <div class="feature-text">
+                                <strong>Pernambués</strong>
+                                <span>Fácil Acesso</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-card">
+                        <!-- Imagem gerada por IA dos pets felizes -->
+                        <img src="assets/hero_pets.png" alt="Cão da raça Golden Doodle e gato listrado cinza olhando felizes" class="hero-image" id="hero-img">
+                        <div class="floating-badge badge-top-right">
+                            <span class="floating-emoji">❤️</span>
+                            <div class="badge-text">
+                                <strong>Amor & Cuidado</strong>
+                                <span>Padrão Snoopy Garden</span>
+                            </div>
+                        </div>
+                        <div class="floating-badge badge-bottom-left">
+                            <span class="floating-emoji">🧼</span>
+                            <div class="badge-text">
+                                <strong>Estética Pet</strong>
+                                <span>Banho e Hidratação</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wave transition para a próxima seção -->
+            <div class="hero-wave">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z" fill="var(--color-primary-dark)"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Quick Services Icon Bar (Destaques Rápidos) -->
+        <section class="quick-bar-section">
+            <div class="container">
+                <div class="quick-bar-title-wrapper">
+                    <h2 class="quick-bar-title">NOSSOS SERVIÇOS</h2>
+                </div>
+                <div class="quick-services-grid">
+                    
+                    <!-- Banho e Tosa -->
+                    <a href="#servicos" class="quick-service-item" data-service-target="banho-tosa">
+                        <div class="icon-circle">
+                            <!-- Ícone SVG de Banho e Tosa -->
+                            <svg class="quick-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 40v14a4 4 0 0 0 4 4h32a4 4 0 0 0 4-4V40"/>
+                                <path d="M8 32h48a4 4 0 0 1 4 4v4H4v-4a4 4 0 0 1 4-4z"/>
+                                <path d="M20 22a6 6 0 1 1 12 0c0 6-6 10-6 10s-6-4-6-10z"/>
+                                <circle cx="40" cy="18" r="3"/>
+                                <circle cx="48" cy="24" r="2"/>
+                                <circle cx="16" cy="26" r="2"/>
+                                <path d="M26 48h12"/>
+                            </svg>
+                        </div>
+                        <span>Banho <br>e Tosa</span>
+                    </a>
+
+                    <!-- Consultas -->
+                    <a href="#servicos" class="quick-service-item" data-service-target="consultas">
+                        <div class="icon-circle">
+                            <!-- Ícone SVG Estetoscópio/Consultas -->
+                            <svg class="quick-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 12a6 6 0 0 1 12 0v20a18 18 0 0 0 36 0v-6"/>
+                                <path d="M48 26h12v4a6 6 0 0 1-12 0v-4z"/>
+                                <path d="M30 46v6a6 6 0 0 1-12 0v-6"/>
+                                <rect x="8" y="6" width="8" height="12" rx="2"/>
+                                <rect x="20" y="6" width="8" height="12" rx="2"/>
+                                <path d="M36 32h12"/>
+                            </svg>
+                        </div>
+                        <span>Consultas <br>Clínicas</span>
+                    </a>
+
+                    <!-- Vacinas -->
+                    <a href="#servicos" class="quick-service-item" data-service-target="vacinas">
+                        <div class="icon-circle">
+                            <!-- Ícone SVG Seringa/Vacinas -->
+                            <svg class="quick-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 48L48 16"/>
+                                <path d="M10 54l6-6M42 10l12 12"/>
+                                <path d="M38 12l14 14"/>
+                                <path d="M20 36l8 8"/>
+                                <path d="M14 42l8 8"/>
+                                <path d="M44 8l12 12"/>
+                                <path d="M6 58l6-6"/>
+                                <circle cx="42" cy="22" r="2" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span>Vacinas & <br>Imunização</span>
+                    </a>
+
+                    <!-- Exames Laboratoriais -->
+                    <a href="#servicos" class="quick-service-item" data-service-target="exames">
+                        <div class="icon-circle">
+                            <!-- Ícone SVG de Exames -->
+                            <svg class="quick-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 46V18a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4z"/>
+                                <path d="M22 24h20M22 32h20M22 40h12"/>
+                                <circle cx="48" cy="14" r="6" stroke="none" fill="var(--color-accent)"/>
+                            </svg>
+                        </div>
+                        <span>Exames <br>Laboratoriais</span>
+                    </a>
+
+                    <!-- Farmácia -->
+                    <a href="#servicos" class="quick-service-item" data-service-target="farmacia">
+                        <div class="icon-circle">
+                            <!-- Ícone SVG de Frasco/Remédios -->
+                            <svg class="quick-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="18" y="20" width="28" height="34" rx="6"/>
+                                <path d="M26 20v-8h12v8M20 37h24M32 29v16"/>
+                            </svg>
+                        </div>
+                        <span>Medicamentos <br>& Farmácia</span>
+                    </a>
+
+                    <!-- Acessórios -->
+                    <a href="#servicos" class="quick-service-item" data-service-target="acessorios">
+                        <div class="icon-circle">
+                            <!-- Ícone SVG de Casinha/Pet Shop -->
+                            <svg class="quick-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M8 28v26a4 4 0 0 0 4 4h40a4 4 0 0 0 4-4V28"/>
+                                <path d="M4 28L32 6l28 22"/>
+                                <path d="M26 58V40a6 6 0 0 1 12 0v18"/>
+                                <circle cx="32" cy="22" r="4"/>
+                            </svg>
+                        </div>
+                        <span>Acessórios</span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre Nós -->
+        <section id="sobre" class="about-section">
+            <div class="container about-container">
+                <div class="about-images">
+                    <div class="about-image-grid">
+                        <div class="about-img-box img-large">
+                            <!-- Imagem da Boutique gerada por IA -->
+                            <img src="assets/pet_boutique.png" alt="Área interna boutique premium do Pet Shop Snoopy Garden" class="about-img">
+                        </div>
+                        <div class="about-img-box img-small">
+                            <!-- Imagem do Grooming gerada por IA -->
+                            <img src="assets/grooming_service.png" alt="Cachorro recebendo banho de spa e hidratação" class="about-img">
+                        </div>
+                    </div>
+                    <div class="experience-badge">
+                        <span class="exp-years">+10</span>
+                        <span class="exp-text">Anos de <br>Carinho</span>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <h2 class="section-title-tag">QUEM SOMOS</h2>
+                    <h3 class="section-title">Um pet shop prático, honesto e focado no essencial</h3>
+                    <p class="about-desc">
+                        Localizado no bairro de <strong>Pernambués, em Salvador - BA</strong>, o <strong>Pet Shop Snoopy Garden</strong> é um espaço familiar, padrão e totalmente funcional. Nós não focamos em decorações luxuosas ou sofisticação desnecessária; nosso compromisso real é oferecer serviços de excelente qualidade para garantir a higiene, a saúde e o bem-estar do seu melhor amigo, com honestidade e preços que cabem no bolso.
+                    </p>
+                    <p class="about-desc">
+                        Acreditamos que cuidar de um pet exige praticidade, segurança e dedicação diária. Por isso, mantemos uma estrutura muito limpa e organizada, perfeita para receber seus petes para banho, tosa higiênica e consultas clínicas de rotina. Aqui, seu companheiro recebe atenção dedicada de verdade, sem complicações.
+                    </p>
+                    
+                    <ul class="about-values">
+                        <li class="value-item">
+                            <span class="value-icon">✓</span>
+                            <div>
+                                <strong>Estrutura Funcional:</strong> Área de banho e tosa sempre higienizada, consultório clínico organizado e medicamentos essenciais sempre à disposição.
+                            </div>
+                        </li>
+                        <li class="value-item">
+                            <span class="value-icon">✓</span>
+                            <div>
+                                <strong>Atendimento de Confiança:</strong> Veterinários parceiros atenciosos e profissionais focados em realizar um serviço de alta qualidade diária.
+                            </div>
+                        </li>
+                        <li class="value-item">
+                            <span class="value-icon">✓</span>
+                            <div>
+                                <strong>Higiene e Cuidado Real:</strong> Banhos cuidadosos, tosa bem acabada e atendimento clínico sem complicação ou taxas desnecessárias.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Serviços Detalhados -->
+        <section id="servicos" class="services-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title-tag">NOSSOS SERVIÇOS</h2>
+                    <h3 class="section-title">Tudo para o cuidado diário do seu pet</h3>
+                    <p class="section-desc mx-auto">
+                        Oferecemos serviços essenciais e funcionais de banho, tosa, consultas clínicas, vacinas e exames de forma ágil, segura e altamente dedicada.
+                    </p>
+                </div>
+
+                <div class="services-grid" id="services-cards-grid">
+                    
+                    <!-- Card 1: Banho e Tosa -->
+                    <div class="service-card" id="card-banho-tosa">
+                        <div class="card-image-wrapper">
+                            <img src="assets/grooming_service.png" alt="Serviço de banho e tosa funcional e cuidadoso" class="card-img">
+                            <span class="card-badge">Serviço Principal</span>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title">Banho & Tosa</h4>
+                            <p class="card-text">
+                                Banhos completos com secagem cuidadosa e tosa higiênica.
+                            </p>
+                            <div class="card-footer-info">
+                                <a href="#agendar" class="btn btn-primary btn-sm btn-block btn-select-service" data-service="Banho e Tosa">Agendar Horário</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Consultas Clínicas -->
+                    <div class="service-card" id="card-consultas">
+                        <div class="card-image-wrapper">
+                            <img src="assets/veterinary_service.png" alt="Consulta veterinária geral e de confiança" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title">Consultas Clínicas</h4>
+                            <p class="card-text">
+                                Atendimento médico especializado com agendamento prévio.
+                            </p>
+                            <div class="card-footer-info">
+                                <a href="#agendar" class="btn btn-primary btn-sm btn-block btn-select-service" data-service="Consulta Clínica">Agendar Consulta</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Vacinas e Imunização -->
+                    <div class="service-card" id="card-vacinas">
+                        <div class="card-image-wrapper">
+                            <img src="assets/hero_pets.png" alt="Vacinação veterinária confiável e em dia" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title">Vacinas & Imunização</h4>
+                            <p class="card-text">
+                                Aplicação de vacinas essenciais para seu pet.
+                            </p>
+                            <div class="card-footer-info">
+                                <a href="#agendar" class="btn btn-primary btn-sm btn-block btn-select-service" data-service="Vacinação">Agendar Vacina</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Exames Laboratoriais -->
+                    <div class="service-card" id="card-exames">
+                        <div class="card-image-wrapper">
+                            <img src="assets/veterinary_service.png" alt="Exames laboratoriais para diagnóstico" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title">Exames Laboratoriais</h4>
+                            <p class="card-text">
+                                Coleta e encaminhamento de exames de sangue, fezes, urina e testes rápidos para diagnósticos precisos e tratamentos corretos.
+                            </p>
+                            <div class="card-footer-info">
+                                <a href="#agendar" class="btn btn-primary btn-sm btn-block btn-select-service" data-service="Exames Laboratoriais">Agendar Exame</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Farmácia Veterinária -->
+                    <div class="service-card" id="card-farmacia">
+                        <div class="card-image-wrapper">
+                            <img src="assets/pet_boutique.png" alt="Medicamentos e farmácia veterinária completa" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title">Medicamentos & Farmácia</h4>
+                            <p class="card-text">
+                                Ampla variedade de medicamentos prescritos para a saúde e tratamento do seu pet.
+                            </p>
+                            <div class="card-footer-info">
+                                <a href="#agendar" class="btn btn-primary btn-sm btn-block btn-select-service" data-service="Farmácia">Solicitar Medicamento</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Acessórios -->
+                    <div class="service-card" id="card-acessorios">
+                        <div class="card-image-wrapper">
+                            <img src="assets/pet_boutique.png" alt="Rações de qualidade e acessórios práticos" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title">Acessórios</h4>
+                            <p class="card-text">
+                                Oferecemos uma seleção de petiscos saborosos, brinquedos, coleiras, guias, caminhas, caixas de transporte e outros itens práticos para o dia a dia do seu pet.
+                            </p>
+                            <div class="card-footer-info">
+                                <a href="#agendar" class="btn btn-primary btn-sm btn-block btn-select-service" data-service="Acessórios">Ver Acessórios</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Seção de Agendamento Inteligente -->
+        <section id="agendar" class="booking-section">
+            <div class="container booking-container">
+                <div class="booking-content-info">
+                    <h2 class="section-title-tag">AGENDAMENTO RÁPIDO</h2>
+                    <h3 class="section-title text-mint">Reserve um momento de carinho para o seu pet</h3>
+                    <p class="booking-desc">
+                        Agende de forma simples e rápida! Preencha os dados e confirme a reserva diretamente via <strong>WhatsApp</strong>. Nossa equipe estará aguardando o seu melhor amigo.
+                    </p>
+                    
+                    <div class="booking-benefits-list">
+                        <div class="booking-benefit-item">
+                            <div class="benefit-icon-circle">📱</div>
+                            <div class="benefit-text">
+                                <strong>Sem complicações:</strong> Não precisa de cadastro complexo. Agendamento prático e rápido diretamente pelo WhatsApp.
+                            </div>
+                        </div>
+                        <div class="booking-benefit-item">
+                            <div class="benefit-icon-circle">⚡</div>
+                            <div class="benefit-text">
+                                <strong>Agilidade no Retorno:</strong> Respondemos sua mensagem rapidamente em nosso horário comercial para confirmar o horário do seu pet.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-card">
+                    <h4 class="booking-card-title">Dados do Agendamento</h4>
+                    <form id="whatsapp-booking-form" novalidate>
+                        
+                        <!-- Nome do Tutor -->
+                        <div class="form-group">
+                            <label for="tutor-name">Seu Nome *</label>
+                            <input type="text" id="tutor-name" class="form-control" placeholder="Ex: Maria Souza" required>
+                            <span class="error-msg" id="err-tutor-name">Por favor, digite seu nome.</span>
+                        </div>
+
+                        <div class="form-group-row">
+                            <!-- Nome do Pet -->
+                            <div class="form-group">
+                                <label for="pet-name">Nome do Pet *</label>
+                                <input type="text" id="pet-name" class="form-control" placeholder="Ex: Pipoca" required>
+                                <span class="error-msg" id="err-pet-name">Digite o nome do seu pet.</span>
+                            </div>
+                            
+                            <!-- Tipo de Pet -->
+                            <div class="form-group">
+                                <label for="pet-type">Espécie *</label>
+                                <select id="pet-type" class="form-control" required>
+                                    <option value="" disabled selected>Selecione...</option>
+                                    <option value="Cachorro">Cachorro</option>
+                                    <option value="Gato">Gato</option>
+                                </select>
+                                <span class="error-msg" id="err-pet-type">Selecione se é cão ou gato.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <!-- Serviço Desejado -->
+                            <label for="booking-service">Serviço Desejado *</label>
+                            <select id="booking-service" class="form-control" required>
+                                <option value="" disabled selected>Selecione um serviço...</option>
+                                <option value="Banho e Tosa">Banho & Tosa</option>
+                                <option value="Consulta Clínica">Consultas Clínicas</option>
+                                <option value="Vacinação">Vacinas & Imunização</option>
+                                <option value="Exames Laboratoriais">Exames Laboratoriais</option>
+                                <option value="Farmácia">Medicamentos & Farmácia</option>
+                                <option value="Acessórios">Acessórios</option>
+                            </select>
+                            <span class="error-msg" id="err-booking-service">Selecione o serviço pretendido.</span>
+                        </div>
+
+                        <!-- Data -->
+                        <div class="form-group">
+                            <label for="booking-date">Data Desejada *</label>
+                            <input type="date" id="booking-date" class="form-control" required>
+                            <span class="error-msg" id="err-booking-date">Selecione uma data futura.</span>
+                        </div>
+
+                        <!-- Observações extras / Necessidades -->
+                        <div class="form-group">
+                            <label for="booking-notes">Observações ou Algum Cuidado Especial?</label>
+                            <textarea id="booking-notes" class="form-control" rows="2" placeholder="Ex: Meu pet é arisco com secador; observações sobre o comportamento dele..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-whatsapp-booking btn-block">
+                            <!-- WhatsApp Icon -->
+                            <svg viewBox="0 0 24 24" class="booking-wa-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.377-.01-.58-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.8.983 3.834 1.503 5.903 1.504h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            Confirme e Agende o seu horário no WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato & Mapa Interativo -->
+        <section id="contato" class="contact-section">
+            <div class="container contact-container">
+                <div class="contact-info-panel">
+                    <h2 class="section-title-tag">CONTATOS E ENDEREÇO</h2>
+                    <h3 class="section-title">Venha nos fazer uma visita!</h3>
+                    <p class="contact-desc">
+                        Nossas portas estão abertas para receber você e seu amado pet. Localizado no aconchegante Jardim Brasília em Pernambués, temos estacionamento próprio gratuito e segurança para sua maior conveniência.
+                    </p>
+
+                    <div class="contact-details">
+                        <!-- Endereço -->
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div class="contact-text">
+                                <strong>Endereço</strong>
+                                <address>R. Numa Pompílio Bitencourt, 131 - Pernambués, Jardim Brasília, Salvador - BA, 41100-170</address>
+                            </div>
+                        </div>
+
+                        <!-- Telefone -->
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div class="contact-text">
+                                <strong>Telefone (WhatsApp)</strong>
+                                <a href="tel:71999922320">(71) 99992-2320</a>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <div class="contact-text">
+                                <strong>E-mail Comercial</strong>
+                                <a href="mailto:snoopygardenpetshop@gmail.com">snoopygardenpetshop@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Horários -->
+                        <div class="contact-item">
+                            <span class="contact-icon">⏰</span>
+                            <div class="contact-text">
+                                <strong>Horário de Funcionamento</strong>
+                                <span>Segunda a Sexta: 08:00 às 17:00<br>Sábados: 08:00 às 16:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LeafletJS Mapa -->
+                <div class="map-wrapper">
+                    <div class="map-card">
+                        <div class="map-header">
+                            <span class="map-indicator-dot"></span>
+                            📍 Localização em Tempo Real (Pernambués, Salvador)
+                        </div>
+                        <!-- Container onde o LeafletJS desenha o mapa real! -->
+                        <div id="leaflet-map" aria-label="Mapa interativo mostrando a localização da Pet Shop Snoopy Garden"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand-col">
+                <a href="#inicio" class="footer-logo">
+                    <img src="assets/logo.png" alt="Pet Shop Snoopy Garden" class="logo-icon-footer">
+                    <span>Snoopy Garden</span>
+                </a>
+                <p class="footer-pitch">
+                    Aqui o seu pet é tratado como parte da família! O melhor banho e tosa, veterinário qualificado e atendimento amoroso.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/snoopygardenpetshop/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Pet Shop Snoopy Garden">📸 Instagram</a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h5 class="footer-title">Links Rápidos</h5>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#servicos">Nossos Serviços</a></li>
+                    <li><a href="#agendar">Agendar Online</a></li>
+                    <li><a href="#contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-info-col">
+                <h5 class="footer-title">Informações</h5>
+                <p class="footer-info-text">
+                    <strong>Pet Shop Snoopy Garden LTDA</strong><br>
+                    CNPJ: 16.754.721/0001-27
+                </p>
+                <p class="footer-love-text">
+                    Feito com muito ❤️ em Salvador, Bahia.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 Pet Shop Snoopy Garden. Todos os direitos reservados.</p>
+                <p>Desenvolvido para máxima experiência e usabilidade.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão de WhatsApp Flutuante no Canto Inferior Direito -->
+    <a href="https://api.whatsapp.com/send?phone=5571999922320&text=Confirme%20e%20Agende%20seu%20hor%C3%A1rio%20no%20WhatsApp%20" class="floating-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.377-.01-.58-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.8.983 3.834 1.503 5.903 1.504h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- Leaflet.js script para o Mapa Interativo -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="index.js"></script>
+</body>
+</html>
